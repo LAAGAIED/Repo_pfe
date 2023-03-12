@@ -1,0 +1,22 @@
+server:
+  port: 8083
+
+spring:
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/pfe
+    username: root
+    password: root
+  jpa:
+    database: mysql
+    show-sql: true
+
+logging:
+  level:
+    org.springframework: ERROR
+    ma.pfe: DEBUG
+    org.hibernate: ERROR
+    org.apache: ERROR
+    com.mysql: ERROR
+    java.base: ERROR
+    com: ERROR
