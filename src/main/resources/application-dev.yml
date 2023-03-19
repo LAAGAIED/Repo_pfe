@@ -5,11 +5,16 @@ spring:
   datasource:
     driver-class-name: com.mysql.jdbc.Driver
     url: jdbc:mysql://localhost:3306/pfe
-    username: root
+    username: postgres
     password: root
   jpa:
     database: mysql
     show-sql: true
+    generate-ddl : true
     hibernate:
       ddl-auto: create
-
+logging:
+  level:
+    org.springframework.web: ERROR
+    ma.pfe: DEBUG
+    org.hibernate: ERROR

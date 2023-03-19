@@ -31,12 +31,24 @@
             <artifactId>spring-boot-starter-web</artifactId>
         </dependency>
         <!-- MySQL Driver -->
+
+
+        <!-- SWAGGER -->
+
         <dependency>
             <groupId>io.springfox</groupId>
             <artifactId>springfox-boot-starter</artifactId>
             <version>3.0.0</version>
         </dependency>
-
+        <dependency>
+            <groupId>io.springfox</groupId>
+            <artifactId>springfox-boot-starter</artifactId>
+            <version>3.0.0</version></dependency>
+        <dependency>
+        <groupId>io.springfox</groupId>
+        <artifactId>springfox-swagger-ui</artifactId>
+        <version>3.0.0</version>
+    </dependency>
 
     </dependencies>
 </project>

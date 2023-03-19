@@ -10,7 +10,9 @@ spring:
   jpa:
     database: mysql
     show-sql: true
+
 logging:
   level:
+    org.springframework.web: DEBUG
     ma.pfe: ERROR
-    org: ERROR
+    org.hibernate: ERROR
