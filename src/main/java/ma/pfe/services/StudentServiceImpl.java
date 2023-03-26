@@ -23,21 +23,22 @@ public class StudentServiceImpl implements IStudentService{
 
     @Override
     public long save(StudentDto dto) {
-        LOGGER.debug("Star method save");return studentRepository.save(mapper.convertDtotoEntity(dto));
+        LOGGER.debug("Star method save dto : {}",dto);
+        return mapper.convertEntitytoDto(studentRepository.save(mapper.convertDtotoEntity(dto))).getId();
     }
 
     @Override
-    public boolean update(StudentDto dto) {LOGGER.debug("Star method update");
-        return studentRepository.update(mapper.convertDtotoEntity(dto));
+    public long update(StudentDto dto) {LOGGER.debug("Star method update dto : {}",dto);
+        return mapper.convertEntitytoDto(studentRepository.save(mapper.convertDtotoEntity(dto))).getId();
     }
 
     @Override
     public boolean deleteByid(long id) {
-        LOGGER.debug("Star method delete");return studentRepository.delete(id);
+        LOGGER.debug("Star method delete id : {}",id); studentRepository.deleteById(id);return true;
     }
 
     @Override
     public List<StudentDto> selectAll() {
-        LOGGER.debug("Star method selectAll");return mapper.studentEntiesToDtos(studentRepository.selectAll());
+        LOGGER.debug("Star method selectAll");return mapper.studentEntiesToDtos(studentRepository.findAll());
     }
 }

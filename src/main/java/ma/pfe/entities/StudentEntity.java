@@ -1,7 +1,14 @@
 package ma.pfe.entities;
 
+import javax.persistence.*;
+
+@Entity
 public class StudentEntity {
+    @Column(name = "name_student")
     private String name;
+    @Id
+    @Column(name="id_student")
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
 
     public String getName() {

@@ -7,7 +7,7 @@ import java.util.List;
 public interface IStudentService {
 
     long save(StudentDto dto);
-    boolean update(StudentDto dto);
+    long update(StudentDto dto);
     boolean deleteByid(long id);
 
     List<StudentDto>selectAll();
