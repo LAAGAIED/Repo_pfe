@@ -6,10 +6,8 @@ import javax.persistence.*;
 public class StudentEntity {
     @Column(name = "name_student")
     private String name;
-    @Id
-    @Column(name="id_student")
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private long id;
+    @EmbeddedId
+    private StudentId studentId;
 
     public String getName() {
         return name;
@@ -19,19 +17,19 @@ public class StudentEntity {
         this.name = name;
     }
 
-    public long getId() {
-        return id;
+    public StudentId getStudentId() {
+        return studentId;
     }
 
-    public void setId(long id) {
-        this.id = id;
+    public void setStudentId(StudentId studentId) {
+        this.studentId = studentId;
     }
 
     @Override
     public String toString() {
         return "StudentEntity{" +
                 "name='" + name + '\'' +
-                ", id=" + id +
+                ", studentId=" + studentId +
                 '}';
     }
 }
