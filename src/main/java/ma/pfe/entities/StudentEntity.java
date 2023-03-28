@@ -9,6 +9,14 @@ public class StudentEntity {
     @EmbeddedId
     private StudentId studentId;
 
+    @Embedded
+    @AttributeOverrides({
+            @AttributeOverride(name = "rue", column = @Column(name = "rue_student")),
+            @AttributeOverride(name = "avenue", column = @Column(name = "avenue_student")),
+            @AttributeOverride(name = "numbre", column = @Column(name = "numbre_student"))
+    })
+    private Adresse adresse;
+
     public String getName() {
         return name;
     }
